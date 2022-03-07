@@ -1,2 +1,2 @@
 # fuzzy-computing-machine
-rock papers scissors 
+rock paper scissor
