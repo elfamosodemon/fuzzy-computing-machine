@@ -4,19 +4,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Bangers, cursive;
+    color: #001011;
 }
 
 body {
-    background: white;
+    background: #F7FFF7;
+    /*#6D72C3;*/
 }
 
 header {
-    background: grey;
+    background: #4ECDC4;
+    /*#563FA2;*/
 }
 
 header>h1 {
     font-size: 40px;
-    color: #272727;
     text-align: center;
     padding: 10px;
 }
@@ -28,38 +30,57 @@ header>h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    color: #272727;
 }
 
 #player {
     background: #7CE577;
-    width: 95px;
+    width: 101px;
 }
 
 #computer {
     background: #F02D3A;
-    width: 140px;
+    width: 149px;
 }
 
 .result {
     font-size: 40px;
     margin-top: 20px;
     text-align: center;
-    color: #272727;
 }
 
 .message {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #272727;
     text-align: center;
     font-size: 40px;
 }
 
 .choices {
-    margin: 100px 200px 100px;
+    padding: 10px;
+    margin: 100px 0px 200px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.choice {
+    border: 3px solid #272727;
+    border-radius: 80px;
+    transition: all 0.3s;
+}
+
+.buttonTransform {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #001011
+}
+
+.score {
+    border: 3px solid;
+}
+
+.robot {
+    border: 3px solid;
+    border-radius: 80px;
 }
