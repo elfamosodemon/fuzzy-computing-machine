@@ -1,3 +1,3 @@
 # Rock Paper Scissors
 
-A simple game that runs on the browser console.
+now the game can be played outside the console through a simple interface.
