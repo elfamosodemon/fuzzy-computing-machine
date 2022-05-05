@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Bangers, cursive;
+}
+
+body {
+    background: white;
+}
+
+header {
+    background: grey;
+}
+
+header>h1 {
+    font-size: 40px;
+    color: #272727;
+    text-align: center;
+    padding: 10px;
+}
+
+.score-board {
+    font-size: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #272727;
+}
+
+#player {
+    background: #7CE577;
+    width: 95px;
+}
+
+#computer {
+    background: #F02D3A;
+    width: 140px;
+}
+
+.result {
+    font-size: 40px;
+    margin-top: 20px;
+    text-align: center;
+    color: #272727;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #272727;
+    text-align: center;
+    font-size: 40px;
+}
+
+.choices {
+    margin: 100px 200px 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
