@@ -21,35 +21,34 @@ function win(textWin) {
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = textWin;
-    for (var i = 0; i < 5; i++) {
-        if (playerScore <= 2) {
-            message_p.innerHTML = " — BEGINNER'S LUCK!";
-        } else if (playerScore == 3) {
-            message_p.innerHTML = " — YOU CAN'T BEAT ME!";
-        } else {
-            message_p.innerHTML = " — YOU CAN DO BETTER!";
-        }
+    if (playerScore <= 2) {
+        message_p.innerHTML = " — BEGINNER'S LUCK!";
+    } else if (playerScore == 3) {
+        message_p.innerHTML = " — YOU CAN'T BEAT ME!";
+    } else {
+        message_p.innerHTML = " — YOU CAN DO BETTER!";
     }
 }
+
 
 function lost(textLost) {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
     playerScore_span.innerHTML = playerScore;
     result_p.innerHTML = textLost;
-    for (var i = 0; i < 5; i++) {
-        if (computerScore <= 2) {
-            message_p.innerHTML = " — NOOB XD"
-        } else if (computerScore == 3) {
-            message_p.innerHTML = " — I'M THE BEST!";
-        } else {
-            message_p.innerHTML = " — YOU CAN DO BETTER!";
 
-        }
+    if (computerScore <= 2) {
+        message_p.innerHTML = " — NOOB XD"
+    } else if (computerScore == 3) {
+        message_p.innerHTML = " — I'M THE BEST!";
+    } else {
+        message_p.innerHTML = " — YOU CAN DO BETTER!";
 
     }
 
 }
+
+
 
 function draw(textDraw) {
     result_p.innerHTML = textDraw;
