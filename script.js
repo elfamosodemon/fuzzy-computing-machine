@@ -8,14 +8,28 @@ const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 const message_p = document.querySelector(".message > p");
+const player_div = document.getElementById("player")
+
+
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    this.classList.remove('buttonTransform')
+}
 
 function win(textWin) {
     playerScore++;
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = textWin;
-    message_p.innerHTML = " — BEGINNER'S LUCK!";
-
+    for (var i = 0; i < 5; i++) {
+        if (playerScore <= 2) {
+            message_p.innerHTML = " — BEGINNER'S LUCK!";
+        } else if (playerScore == 3) {
+            message_p.innerHTML = " — YOU CAN'T BEAT ME!";
+        } else {
+            message_p.innerHTML = " — YOU CAN DO BETTER!";
+        }
+    }
 }
 
 function lost(textLost) {
@@ -23,12 +37,23 @@ function lost(textLost) {
     computerScore_span.innerHTML = computerScore;
     playerScore_span.innerHTML = playerScore;
     result_p.innerHTML = textLost;
-    message_p.innerHTML = " — I'M THE BEST!";
+    for (var i = 0; i < 5; i++) {
+        if (computerScore <= 2) {
+            message_p.innerHTML = " — NOOB XD"
+        } else if (computerScore == 3) {
+            message_p.innerHTML = " — I'M THE BEST!";
+        } else {
+            message_p.innerHTML = " — YOU CAN DO BETTER!";
+
+        }
+
+    }
 
 }
 
 function draw(textDraw) {
     result_p.innerHTML = textDraw;
+    message_p.innerHTML = " — C'MON. PLAY AGAIN."
 
 }
 
@@ -40,28 +65,37 @@ function theWinner() {
         playerScore_span.innerHTML = 0;
         result_p.innerHTML = "GAME OVER. COMPUTER IS THE WINNER!"
         message_p.innerHTML = " — BETTER LUCK NEXT TIME!"
+
+
     }
     if (playerScore >= 5) {
         computerScore = 0;
         playerScore = 0;
         computerScore_span.innerHTML = 0;
         playerScore_span.innerHTML = 0;
-        result_p.innerHTML = "GAME OVER. PLAYER IS THE WINNER!"
         message_p.innerHTML = " — YOU WON. LET'S PLAY AGAIN?"
+        result_p.innerHTML = "GAME OVER. PLAYER IS THE WINNER!"
+
     }
 }
 
 function playerSelection() {
     rock_div.addEventListener('click', function() {
         playRound("rock");
+        rock_div.classList.add('buttonTransform');
+
     });
     paper_div.addEventListener('click', function(e) {
         playRound("paper");
+        paper_div.classList.add('buttonTransform');
     });
     scissors_div.addEventListener('click', function(e) {
         playRound("scissors");
+        scissors_div.classList.add('buttonTransform');
 
     });
+    const buttons = document.querySelectorAll('.choice')
+    buttons.forEach(buttons => buttons.addEventListener('transitionend', removeTransition));
 }
 
 function computerPlay() {
@@ -87,7 +121,7 @@ function playRound(playerSelection) {
     if (playerSelection == "rock") {
         if (computerSelection == "paper") {
             computerWin = true
-            lost(`${computerSelection} beats ${playerSelection}.Computer wins!`)
+            lost(`${computerSelection} beats ${playerSelection}. Computer wins!`)
 
         }
     }
@@ -107,6 +141,7 @@ function playRound(playerSelection) {
     }
     if (!computerWin) {
         win(`${playerSelection} beats ${computerSelection}. Player Wins!`)
+
     }
     theWinner()
 }
